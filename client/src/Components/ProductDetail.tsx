@@ -48,14 +48,15 @@ export const ProductDetail = () => {
   }
   
   return (
-    <article className="article-card">
-      <figure className='article-img'>
+    <div className="product">
+      <figure className='product-img'>
         <img src = {milkImg} alt='Milk'/>
       </figure>
-      <div className="article-content">
-        <h3 className='card-title'>{milk.name}</h3>
-        <div className='tag'>{milk.type}</div>
-        <input
+      <div className="product-content">
+        <h3 className='product-title'>{milk.name}</h3>
+        <div className='product-type'>{milk.type}</div>
+        <div>
+        <input className='slider'
             type='range'
             onChange={changeQuantity}
             min={1}
@@ -63,13 +64,11 @@ export const ProductDetail = () => {
             step={1}
             value={quantity}
         ></input>
-        
-        <button onClick={handleOrder}>Order</button>
-        <div>
-          <div className='reaction'>{milk.storage} liter</div>
-        </div>
+          <div className='product-storage'>{milk.storage} liter</div>
+        </div>  
+        <button className='product-btn' onClick={handleOrder}>Order</button>
      </div>
-    </article>
+    </div>
   )
 }
 
